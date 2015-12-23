@@ -6,8 +6,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content=""/>
         <title>Admin API</title>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>resources/css/bootstrap.min.css">        
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>resources/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>resources/css/custom_styles.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>resources/css/zebra_datePicker.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>resources/css/zebra_datePicker_custom.css" type="text/css">
+        
         <script type="text/javascript" src="<?php echo base_url() ?>resources/js/jquery.min.js"></script>
+         <script type="text/javascript" src="<?php echo base_url(); ?>resources/js/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>resources/js/zebra_datepicker.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>resources/js/zebra_datepicker_core.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>resources/js/bootstrap.min.js"></script>
     </head>
     <body>
@@ -40,7 +47,6 @@
                         <?php echo $contents; ?>
                     </div>
                 </div>
-         
             </div>
         </div>
     </body>

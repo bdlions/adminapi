@@ -18,11 +18,11 @@ class Subscriber extends CI_Controller {
     
     public function create_subscriber()
     {
-        
+          $this->template->load(ADMIN_LOGIN_SUCCESS_TEMPLATE,"admin/subscriber/create_subscriber");
     }
     
     public function update_subscriber()
     {
-        
+      $this->template->load(ADMIN_LOGIN_SUCCESS_TEMPLATE,"admin/subscriber/update_subscriber");
     }
 }

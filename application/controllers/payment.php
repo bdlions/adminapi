@@ -18,11 +18,15 @@ class Payment extends CI_Controller {
     
     public function create_payment()
     {
-        
+       $this->template->load(ADMIN_LOGIN_SUCCESS_TEMPLATE,"admin/payment/create_payment"); 
     }
     
     public function update_payment()
     {
-        
+      $this->template->load(ADMIN_LOGIN_SUCCESS_TEMPLATE,"admin/payment/update_payment");   
+    }
+    public function delete_payment()
+    {
+       $this->template->load(ADMIN_LOGIN_SUCCESS_TEMPLATE,"admin/payment/delete_payment");     
     }
 }
