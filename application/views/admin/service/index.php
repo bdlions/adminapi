@@ -19,9 +19,9 @@
                             </tr>
                             <?php foreach($service_list as $service_info){?> 
                             <tr>
-                                <td><?php echo $service_info['title']; ?></td>
+                                <td><?php echo $service_info->title; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url()."service/update_service/".$service_info['service_id'];?>">
+                                    <a href="<?php echo base_url()."service/update_service/".$service_info->id ;?>">
                                         Edit
                                     </a>
                                 </td>                                

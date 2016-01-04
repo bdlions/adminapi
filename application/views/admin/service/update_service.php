@@ -4,7 +4,7 @@
         <div class="form-background top-bottom-padding">
             <div class="row">
                 <div class ="col-md-8 margin-top-bottom">
-                    <?php echo form_open("service/update_service/".$service_info['service_id'], array('id' => 'form_update_service', 'class' => 'form-horizontal')); ?>
+                    <?php echo form_open("service/update_service/".$service_info->id, array('id' => 'form_update_service', 'class' => 'form-horizontal')); ?>
                     <div class ="row">
                         <div class="col-md-12"> <?php echo $message; ?> </div>
                     </div>
