@@ -15,7 +15,7 @@ class Service_model extends Ion_auth_model {
         $this->curl->create(WEBSERVICE_SERVICE_PATH . "getserviceinfo");
         $this->curl->post(array("service_id" => $service_id));
         return json_decode($this->curl->execute());
-        
+
 //        $service_info = array(
 //            'service_id' => 1,
 //            'title' => 'Bkash Send Money'

@@ -4,16 +4,16 @@
         <div class="form-background top-bottom-padding">
             <div class="row">
                 <div class ="col-md-8 margin-top-bottom">
-                   <?php echo form_open("transaction/update_transaction", array('id' => 'form_update_transaction', 'class' => 'form-horizontal')); ?>
+                    <?php echo form_open("transaction/update_transaction/".$transction_info->transactionId, array('id' => 'form_update_transaction', 'class' => 'form-horizontal')); ?>
                     <div class ="row">
-                        <div class="col-md-12"> </div>
+                        <div class="col-md-12"> <?php echo $message; ?> </div>
                     </div>
                     <div class="form-group">
                         <label for="api_key" class="col-md-6 control-label requiredField">
-                           Api_key : 
+                            Api_key : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="api_key" class="form-control" type="text" value="" name="api_key">
+                            <?php echo form_input($api_key + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
@@ -21,31 +21,31 @@
                             Balance_in : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="balance_in" class="form-control" type="text" value="" name="balance_in">
+                            <?php echo form_input($balance_in + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="balance_out" class="col-md-6 control-label requiredField">
-                         Balance_out : 
+                            Balance_out : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="balance_out" class="form-control" type="text" value="" name="balance_out">
+                            <?php echo form_input($balance_out + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="status_id" class="col-md-6 control-label requiredField">
-                      Status_id : 
+                            Status_id : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="status_id" class="form-control" type="text" value="" name="status_id">
+                            <?php echo form_input($status_id + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="type_id" class="col-md-6 control-label requiredField">
-                           Type_id : 
+                            Type_id : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="type_id" class="form-control" type="text" value="" name="type_id">
+                            <?php echo form_input($type_id + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
@@ -53,7 +53,7 @@
                             Cell_no : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="cell_no" class="form-control" type="text" value="" name="cell_no">
+                            <?php echo form_input($cell_no + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
@@ -61,30 +61,30 @@
                             Description : 
                         </label>
                         <div class ="col-md-6">
-                           <textarea id="description" class="form-control" type="text" rows="2" cols="10" name="description"></textarea>
+                            <?php echo form_input($description + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="created_on" class="col-md-6 control-label requiredField">
-                        Created_on : 
+                            Created_on : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="created_on" class="form-control" type="text" value="" name="created_on">
+                            <?php echo form_input($created_on + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="modified_on" class="col-md-6 control-label requiredField">
-                      Modified_on : 
+                            Modified_on : 
                         </label>
                         <div class ="col-md-6">
-                            <input id="modified_on" class="form-control" type="text" value="" name="modified_on">
+                            <?php echo form_input($modified_on + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="submit_update_transaction" class="col-md-6 control-label requiredField">
                         </label>
                         <div class ="col-md-3 pull-right">
-                           <input id="submit_update_transaction" class="form-control button btn_custom_button" type="submit" value="update" name="submit_update_transaction">
+                            <?php echo form_input($submit_update_transction + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+
 <div class="panel panel-default">
     <div class="panel-heading">Create Subscriber</div>
     <div class="panel-body">
@@ -6,45 +7,52 @@
                 <div class ="col-md-8 margin-top-bottom">
                     <?php echo form_open("subscriber/create_subscriber", array('id' => 'form_create_subscriber', 'class' => 'form-horizontal')); ?>
                     <div class ="row">
-                        <div class="col-md-12"></div>
+                        <div class="col-md-12"> <?php echo $message; ?> </div>
                     </div>
                     <div class="form-group">
                         <label for="registration_date" class="col-md-6 control-label requiredField">
-                         Registration_date :
+                            Registration_date :
                         </label>
                         <div class ="col-md-6">
-                             <input id="datepicker-example1" class="form-control" type="text" style="z-index: 9999">
+                            <?php echo form_input($registration_date + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="expired_date" class="col-md-6 control-label requiredField">
-                         Expired_date :
+                            Expired_date :
                         </label>
                         <div class ="col-md-6">
-                             <input id="datepicker-example2" class="form-control" type="text" style="z-index: 9999">
+                            <?php echo form_input($expired_date + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="max_member" class="col-md-6 control-label requiredField">
-                           Max_member :
+                            Max_member :
                         </label>
                         <div class ="col-md-6">
-                            <input id="max_member" class="form-control" type="text" value="" name="max_member">
+                            <?php echo form_input($max_member + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
                         <label for="ip_address" class="col-md-6 control-label requiredField">
-                           Ip_Address :
+                            Ip_Address :
                         </label>
                         <div class ="col-md-6">
-                            <input id="ip_address" class="form-control" type="text" value="" name="ip_address">
+                            <?php echo form_input($ip_address + array('class' => 'form-control')); ?>
                         </div> 
                     </div>
                     <div class="form-group">
-                        <label for="submit_create_subscriber" class="col-md-6 control-label requiredField">
+                        <label for="ref_user_name" class="col-md-6 control-label requiredField">
+                            Reference User Name :
+                        </label>
+                        <div class ="col-md-6">
+                            <?php echo form_input($ref_user_name + array('class' => 'form-control')); ?>
+                        </div> 
+                    </div>
+                    <div class="form-group">
                         </label>
                         <div class ="col-md-3 pull-right">
-                           <input id="submit_create_subscriber" class="form-control button btn_custom_button" type="submit" value="create" name="submit_create_photo">
+                            <?php echo form_input($submit_create_subscriber + array('class' => 'form-control button btn_custom_button')); ?>
                         </div> 
                     </div>
                 </div>
@@ -52,3 +60,10 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#registration_date').Zebra_DatePicker();
+        $('#expired_date').Zebra_DatePicker();
+    });
+</script>

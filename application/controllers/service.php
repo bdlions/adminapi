@@ -69,13 +69,15 @@ class Service extends CI_Controller {
         $this->form_validation->set_rules('title', 'Title', 'xss_clean|required');
         if ($this->input->post('submit_update_service')) {
             if ($this->form_validation->run() == true) {
-                    $title = $this->input->post('title');
-                   $result =  $this->service_model->update_service($service_id, $title);
-                   var_dump($result);exit;
-                if ($result ) {
-                    $this->data['message'] = "Service is updated successfully.";
-                } else {
-                    $this->data['message'] = 'Error while updating the service.';
+                $title = $this->input->post('title');
+                $result_event = $this->service_model->update_service($service_id, $title);
+                if (property_exists($result_event, "responseCode") != FALSE) {
+                    $response_code = $result_event->responseCode;
+                    if ($response_code == RESPONSE_CODE_SUCCESS) {
+                        $this->data['message'] = "Service is created successfully.";
+                    } else {
+                        $this->data['message'] = 'Error while creating a service.';
+                    }
                 }
             } else {
                 $this->data['message'] = validation_errors();

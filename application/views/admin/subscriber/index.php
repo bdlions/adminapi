@@ -20,20 +20,15 @@
                                 <th style="text-align: center;">Ip address</th>
                                 <th style="text-align: center;">Edit</th>
                             </tr>
-                            <tr>
-                                <th style="text-align: center;">2010-03-18 </th>
-                                <th style="text-align: center;">2010-04-18 </th>
-                                <th style="text-align: center;">5</th>
-                                <th style="text-align: center;">10.10.13.6</th>
-                                <th style="text-align: center"><a href="<?php echo base_url() . "subscriber/update_subscriber"; ?>">Edit</a></th>
-                            </tr>
-                            <tr>
-                                <th style="text-align: center;">2010-03-18</th>
-                                <th style="text-align: center;">2010-03-18</th>
-                                <th style="text-align: center;">4</th>
-                                <th style="text-align: center;">10.10.13.5</th>
-                                <th style="text-align: center"><a href="<?php echo base_url() . "subscriber/update_subscriber"; ?>">Edit</a></th>
-                            </tr>
+                            <?php foreach ($subscriber_list as $subscriber_info) { ?>
+                                <tr>
+                                    <th style="text-align: center;"><?php echo $subscriber_info->registrationDate; ?></th>
+                                    <th style="text-align: center;"><?php echo $subscriber_info->expiredDate; ?></th>
+                                    <th style="text-align: center;"><?php echo $subscriber_info->maxMembers; ?></th>
+                                    <th style="text-align: center;"><?php echo $subscriber_info->ipAddress; ?></th>
+                                    <th style="text-align: center"><a href="<?php echo base_url() . "subscriber/update_subscriber/".$subscriber_info->userId; ?>">Edit</a></th>
+                                </tr>
+                            <?php } ?>
                         </thead>
                     </table>
                 </div>

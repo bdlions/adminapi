@@ -21,34 +21,22 @@
                                 <th style="text-align: center;">Edit</th>
                                 <th style="text-align: center;">Delete</th>
                             </tr>
-                            <tr>
-                                <th style="text-align: center;">Key 1</th>
-                                <th style="text-align: center;">10000</th>
-                                <th style="text-align: center;">2000</th>
-                                <th style="text-align: center;">2</th>
-                                <th style="text-align: center;">3</th>
-                                <th style="text-align: center;">01737766376</th>
-                                <th style="text-align: center;">Balane out</th>
-                                <th style="text-align: center;">4536373</th>
-                                <th style="text-align: center;">4336522</th>
-                                <th style="text-align: center"><a href="<?php echo base_url() . "transaction/update_transaction"; ?>">Edit</a></th>
-                                <th style="text-align: center; cursor: pointer;"><a onclick="open_modal_delete_transaction()"value="" class="">
-                                        Delete </a></th>
-                            </tr>
-                            <tr>
-                                <th style="text-align: center;">Key 2</th>
-                                <th style="text-align: center;">20000</th>
-                                <th style="text-align: center;">2000</th>
-                                <th style="text-align: center;">4</th>
-                                <th style="text-align: center;">5</th>
-                                <th style="text-align: center;">01723342376</th>
-                                <th style="text-align: center;">Cash withdrow</th>
-                                <th style="text-align: center;">45333273</th>
-                                <th style="text-align: center;">4333222</th>
-                                <th style="text-align: center"><a href="<?php echo base_url() . "transaction/update_transaction"; ?>">Edit</a></th>
-                                <th style="text-align: center; cursor: pointer;"><a onclick="open_modal_delete_transaction()"value="" class="">
-                                        Delete </a></th>
-                            </tr>
+                            <?php foreach ($transction_list as $transction_info) { ?>
+                                <tr>
+                                    <th style="text-align: center;"><?php echo $transction_info->apikey; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->balanceIn; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->balanceOut; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->transactionStatusId; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->transactionTypeId; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->cellNumber; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->description; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->createdOn; ?></th>
+                                    <th style="text-align: center;"><?php echo $transction_info->modifiedOn; ?></th>
+                                    <th style="text-align: center"><a href="<?php echo base_url() . "transaction/update_transaction/".$transction_info->transactionId ?>">Edit</a></th>
+                                    <th style="text-align: center; cursor: pointer;"><a onclick="open_modal_delete_transaction('<?php echo $transction_info->transactionId ;?>')"value="" class="">
+                                            Delete </a></th>
+                                </tr>
+                            <?php } ?>
                         </thead>
                     </table>
                 </div>
@@ -57,4 +45,5 @@
     </div>
 </div>
 
-<?php $this->load->view("admin/transaction/modal_delete_transaction");
+<?php
+$this->load->view("admin/transaction/modal_delete_transaction");
